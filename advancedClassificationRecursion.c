@@ -1,5 +1,3 @@
-#include <math.h>
-#include <stdbool.h>
 #include "NumClass.h"
 
 // Function-helpers decleration

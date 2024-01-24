@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <math.h>
 
 /* will return if a number is Armstrong number
@@ -18,8 +17,3 @@ For Example: 145 is a strong number
 1! + 4! + 5! = 145
 */
 int isStrong(int);
-
-/* return the number of digits the given number has */
-int getDigitsNumber(int);
-
-int getDigit(int, int);

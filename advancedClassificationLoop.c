@@ -1,6 +1,4 @@
 #include "NumClass.h"
-#include <math.h>
-#include <stdbool.h>
 
 int isPalindrome(int num){
     int test = num;

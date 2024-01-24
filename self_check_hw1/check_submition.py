@@ -85,13 +85,26 @@ def main():
     print("running tests")
     test_extra_compilation("loops")
     test_extra_compilation("maindrec")
-    
 
     test_output_vs_expected("mains" , "../inputs/input1.txt" , "../outputs/output1.txt")
+    test_output_vs_expected("maindloop" , "../inputs/input1.txt" , "../outputs/output1.txt")
+    test_output_vs_expected("maindrec" , "../inputs/input1.txt" , "../outputs/output1.txt")
+
+    test_output_vs_expected("mains" , "../inputs/input2.txt" , "../outputs/output2.txt")
     test_output_vs_expected("maindloop" , "../inputs/input2.txt" , "../outputs/output2.txt")
+    test_output_vs_expected("maindrec" , "../inputs/input2.txt" , "../outputs/output2.txt")
+
+    test_output_vs_expected("mains" , "../inputs/input3.txt" , "../outputs/output3.txt")
+    test_output_vs_expected("maindloop" , "../inputs/input3.txt" , "../outputs/output3.txt")
     test_output_vs_expected("maindrec" , "../inputs/input3.txt" , "../outputs/output3.txt")
+
+    test_output_vs_expected("mains" , "../inputs/input4.txt" , "../outputs/output4.txt")
+    test_output_vs_expected("maindloop" , "../inputs/input4.txt" , "../outputs/output4.txt")
     test_output_vs_expected("maindrec" , "../inputs/input4.txt" , "../outputs/output4.txt")
+
     test_output_vs_expected("mains" , "../inputs/input5.txt" , "../outputs/output5.txt")
+    test_output_vs_expected("maindloop" , "../inputs/input5.txt" , "../outputs/output5.txt")
+    test_output_vs_expected("maindrec" , "../inputs/input5.txt" , "../outputs/output5.txt")
 
     if passed == 1:
         print("You have PASSED the initial checks.")
