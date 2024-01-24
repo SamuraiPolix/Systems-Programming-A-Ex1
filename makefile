@@ -4,7 +4,6 @@ AR = ar
 MAIN_OBJECT = main.o
 OBJECTS_LOOP = basicClassification.o advancedClassificationLoop.o
 OBJECTS_REC = basicClassification.o advancedClassificationRecursion.o
-OBJECTS = basicClassification.o advancedClassificationLoop.o advancedClassificationRecursion.o
 DEPS = NumClass.h
 CFLAGS =-Wall
 
