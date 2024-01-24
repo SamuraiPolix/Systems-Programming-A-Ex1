@@ -38,7 +38,7 @@ $(MAIN_OBJECT): main.c $(DEPS)
 	$(CC) -c $^ $(CFLAGS) 
 
 %.o: %.c $(DEPS)
-	$(CC) -c $^ $(CFLAGS) -fPIC 
+	$(CC) -c $^ $(CFLAGS) 
 
 # Make libraries:
 $(LIB_LOOP_S): $(OBJECTS_LOOP)
@@ -50,10 +50,10 @@ $(LIB_REC_S): $(OBJECTS_REC)
 # ranlib $@
 
 $(LIB_LOOP_D): $(OBJECTS_LOOP)
-	$(CC) -shared $^ -Wall -o $@
+	$(CC) -shared $^ -Wall -fPIC -o $@
 
 $(LIB_REC_D): $(OBJECTS_REC)
-	$(CC) -shared $^ -Wall -o $@
+	$(CC) -shared $^ -Wall -fPIC -o $@ 
 
 clean: 
 	rm -f *.o *.a *.so mains maindloop maindrec *.gch
