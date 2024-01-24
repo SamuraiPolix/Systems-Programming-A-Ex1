@@ -1,4 +1,5 @@
-#include <math.h>
+#ifndef NUM_CLASS_H
+#define NUM_CLASS_H
 
 /* will return if a number is Armstrong number
 An Armstrong number is an bndigit number that is equal to the sum of the nth powers of its digits.
@@ -17,3 +18,5 @@ For Example: 145 is a strong number
 1! + 4! + 5! = 145
 */
 int isStrong(int);
+
+#endif

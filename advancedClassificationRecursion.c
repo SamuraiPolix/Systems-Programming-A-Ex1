@@ -1,29 +1,43 @@
 #include "NumClass.h"
+#include <math.h>
 
-// Declaring functions
-int calculateArmstrong(int);
+// Declaring function helpers
+int isPalindromeRec(int, int);
+int isArmstrongRec(int, int,int);
+int findNumLength(int);
 
-/* will return if a number is Armstrong number
-"maatefet" function */
-int isArmstrong(int number) {
-    return (calculateArmstrong(number) == number) ? 1 : 0;
+// "maatefet" function
+int isPalindrome(int num){
+    return (num == isPalindromeRec(num,0)) ? 1 : 0;
 }
 
-/* will return if a number is a palindrome */
-int isPalindrome(int number) {
-    int digits = getDigitsNumber(number);
-    if (digits == 1)
-        return 1;
-    if (digits == 2){
-        return (getDigit(number,0) == getDigit(number, 1)) ? 1 : 0;
-    }
-    return isPalindrome((number/10)%(int)(pow(10,digits)));
+// "maatefet" function
+int isArmstrong(int num){
+    return (num == isArmstrongRec(num, 0, findNumLength(num))) ? 1 : 0;
 }
 
+// function helper to find if num isPalindrome number
+int isPalindromeRec(int num,int sum){
+    if(num==0){return sum/10;}
 
-int calculateArmstrong(int number) {
-    int digits = getDigitsNumber(number);
-    if (digits == 1)
-        return number;
-    return (number%10) + calculateArmstrong(number/10);
+    sum += num%10;
+    sum *= 10;
+
+    return isPalindromeRec((num/10), sum);
+}
+
+//function helper to find if num isArmstrong number
+int isArmstrongRec(int num, int sum, int length){
+    if(num == 0){return sum;}
+
+    sum += pow(num%10,length);
+
+    return isArmstrongRec(num/10, sum , length);
+}
+
+//find the n-length of num
+int findNumLength(int num){
+    if(num == 0){return 0;}
+
+    return 1 + findNumLength(num/10);
 }

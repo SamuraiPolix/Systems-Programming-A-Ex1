@@ -1,28 +1,22 @@
 #include "NumClass.h"
+#include <math.h>
+
+// Declaring helper functions
+int getFactorial(int);
 
 int isStrong(int num){
-    
     int digit, temp = 1, sum = 0;
     int originNum = num;
     while(num > 0){
         digit = num%10;
-        for(int i=1;i<=digit;i++){
-            temp *= i;
-        }
-        sum+=temp;
-        temp=1;
-        num/=10;
+        sum += getFactorial(digit);
+        temp = 1;
+        num /= 10;
     }
-    if(sum == originNum){
-        return 1;
-    }
-    else{
-        return 0;
-    }
+    return (sum == originNum) ? 1 : 0;
 }
 
 int isPrime(int num){
-
     if(num == 1 || num == 2){
         return 1;
     }
@@ -34,5 +28,12 @@ int isPrime(int num){
         i++;
     }
     return 1;
-    
+}
+
+int getFactorial(int num) {
+    int factorial = 1;
+    for(int i=1;i<=num;i++){
+        factorial *= i;
+    }
+    return factorial;
 }

@@ -1,4 +1,5 @@
 #include "NumClass.h"
+#include <math.h>
 
 int isPalindrome(int num){
     int temp = num;
