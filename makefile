@@ -35,20 +35,20 @@ maindrec: $(MAIN_OBJECT) $(LIB_REC_D)
 	$(CC) -o $@ $< $(CFLAGS) ./$(LIB_REC_D) -lm -L.
 
 # Creates all the object files including main.o
+$(MAIN_OBJECT): main.c $(DEPS)
+	$(CC) -c $^ $(CFLAGS) 
+
 %.o: %.c $(DEPS)
 	$(CC) -c $^ $(CFLAGS) -fPIC 
-
-main.o: main.c $(DEPS)
-	$(CC) -c $^ $(CFLAGS) 
 
 # Make libraries:
 $(LIB_LOOP_S): $(OBJECTS_LOOP)
 	$(AR) rcs $@ $^
-	ranlib $@
+# ranlib $@
 
 $(LIB_REC_S): $(OBJECTS_REC)
 	$(AR) rcs $@ $^
-	ranlib $@
+# ranlib $@
 
 $(LIB_LOOP_D): $(OBJECTS_LOOP)
 	$(CC) -shared $^ -Wall -o $@
