@@ -1,3 +1,3 @@
-https://github.com/SamuraiPolix/systemsProgramming1/tree/main/exercises/ex1/submission.git
-4aa82e2
+https://github.com/SamuraiPolix/systemsProgrammingAEx1.git
+388b736
 123456789 987654321

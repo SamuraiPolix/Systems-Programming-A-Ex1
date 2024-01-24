@@ -19,6 +19,11 @@ LIB_REC_D = libclassrec.so
 # All makes
 all: mains maindloop maindrec clean
 
+loops: $(LIB_LOOP_S)
+recursives: $(LIP_REC_S)
+recursived: $(LIB_REC_D)
+loopd: $(LIB_LOOP_D)
+
 # Programs
 mains: $(MAIN_OBJECT) $(LIB_REC_S)
 	$(CC) -o $@ $< $(CFLAGS) ./$(LIB_REC_S) -lm -L.
