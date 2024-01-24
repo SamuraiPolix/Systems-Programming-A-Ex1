@@ -5,12 +5,11 @@
 int getFactorial(int);
 
 int isStrong(int num){
-    int digit, temp = 1, sum = 0;
+    int digit, sum = 0;
     int originNum = num;
     while(num > 0){
         digit = num%10;
         sum += getFactorial(digit);
-        temp = 1;
         num /= 10;
     }
     return (sum == originNum) ? 1 : 0;
