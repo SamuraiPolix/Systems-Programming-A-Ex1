@@ -1,39 +1,46 @@
+#include <math.h>
+#include <stdbool.h>
 #include "NumClass.h"
 
-int calculateArmstrong(int);
+// Function-helpers decleration
+int isPalindromeRec(int, int);
+int isArmstrongRec(int, int,int);
+int findNumLength(int,int);
 
-/* will return if a number is Armstrong number
-An Armstrong number is an n-digit number that is equal to the sum of the nth powers of its digits.
-For Example: 407 = 4^3 + 0^3 + 7^3 = 64 + 0 + 343 = 407
-*/
-// "maatefet" function
-int isArmstrong(int number) {
-    if (calculateArmstrong(number) == number)
-        return 1;
-    else
-        return 0;
+//main function
+int isPalindrome(int num){
 
-
+    return num == isPalindromeRec(num,0);
 }
 
-/* will return if a number is a palindrome */
-int isPalindrome(int number) {
-    int digits = getDigitsNumber(number);
-    if (digits == 1)
-        return 1;
-    if (digits == 2){
-        if (getDigit(number,0) == getDigit(number, 1))
-            return 1;
-        else
-            return 0;
-    }
-    return isPalindrome((number/10)%(int)(pow(10,digits)));
+//function helper to find if num isPalindrome number
+int isPalindromeRec(int num,int sum){
+
+    if(num==0){return sum/10;}
+
+    sum += num%10;
+    sum *= 10;
+
+    return isPalindromeRec((num/10), sum);
 }
 
+//main function
+int isArmstrong(int num){
 
-int calculateArmstrong(int number) {
-    int digits = getDigitsNumber(number);
-    if (digits == 1)
-        return number;
-    return number%10 + calculateArmstrong(number/10);
+    return num == isArmstrongRec(num, 0, findNumLength(num, 0));
+}
+
+//function helper to find if num isArmstrong number
+int isArmstrongRec(int num, int sum, int length){
+    if(num == 0){return sum;}
+
+    sum+=pow(num%10,length);
+
+    return isArmstrongRec(num/10, sum , length);
+}
+//find the n-length of num
+int findNumLength(int num, int length){
+    if(num==0){return length;}
+
+    return findNumLength(num/10,length+1);
 }

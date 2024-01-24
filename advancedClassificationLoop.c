@@ -1,24 +1,32 @@
 #include "NumClass.h"
+#include <math.h>
+#include <stdbool.h>
 
-/* will return if a number is Armstrong number
-An Armstrong number is an bndigit number that is equal to the sum of the nth powers of its digits.
-For Example: 407 = 43 + 03 + 73 = 64 + 0 + 343 = 407
-*/
-int isArmstrong(int number) {
-    int digits = getDigitsNumber(number);
-    int sum = 0;
-    for (int i = 0; i < digits; i++){
-        sum += pow(getDigit(number, i), digits);
+int isPalindrome(int num){
+    int test = num;
+    int ans=0;
+    while(test > 0){
+        ans += test%10;
+        ans*=10;
+        test/=10;
     }
-    return sum == number ? 1 : 0;
+    ans /=10;
+    return (num==ans) ? 1:0;
 }
 
-/* will return if a number is a palindrome */
-int isPalindrome(int number) {
-    int digits = getDigitsNumber(number);
-    for (int i = 0; i <= digits/2; i++){
-        if (getDigit(number, i) != getDigit(number, digits-i))
-            return 0;
+int isArmstrong(int num){
+    
+    int originNum = num;
+    int len = 0;
+    int sum = 0;
+    while(originNum>0){
+        originNum /= 10;
+        len++;
     }
-    return 1;
+    originNum=num;
+    while(originNum>0){
+        sum += pow(originNum%10,len);
+        originNum/=10;
+    }
+    return(sum==num) ? 1:0;
 }
