@@ -4,18 +4,18 @@
 
 int isStrong(int num){
     
-    int digit,temp,sum;
+    int digit, temp = 1, sum = 0;
     int originNum = num;
     while(num > 0){
         digit = num%10;
-        for(int i=0;i<digit;i++){
+        for(int i=1;i<=digit;i++){
             temp *= i;
         }
         sum+=temp;
-        temp=0;
+        temp=1;
         num/=10;
     }
-    if(sum == num){
+    if(sum == originNum){
         return 1;
     }
     else{
