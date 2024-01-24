@@ -57,4 +57,4 @@ $(LIB_REC_D): $(OBJECTS_REC)
 	$(CC) -shared $^ -Wall -o $@
 
 clean: 
-	rm -f *.o *.a *.so mains maindloop maindrec
+	rm -f *.o *.a *.so mains maindloop maindrec *.gch
