@@ -29,7 +29,7 @@ int isPrime(int num){
         return 1;
     }
     int i=2;
-    while(i<num){
+    while(i<=sqrt(num)){
         if(num%i == 0){
             return 0;
         }
