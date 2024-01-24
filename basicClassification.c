@@ -6,7 +6,7 @@ int isStrong(int num){
     
     int digit,temp,sum;
     int originNum = num;
-    while(originNum > 0){
+    while(num > 0){
         digit = num%10;
         for(int i=0;i<digit;i++){
             temp *= i;
