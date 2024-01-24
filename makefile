@@ -14,10 +14,10 @@ LIB_LOOP_D = libclassloops.so
 LIB_REC_D = libclassrec.so
 
 # Declare them as non-files
-.PHONY: all clean
+.PHONY: all clean loops recursives recursived loopd
 
 # All makes
-all: mains maindloop maindrec clean
+all: mains maindloop maindrec loops recursives recursived loopd
 
 loops: $(LIB_LOOP_S)
 recursives: $(LIP_REC_S)
@@ -37,6 +37,9 @@ maindrec: $(MAIN_OBJECT) $(LIB_REC_D)
 # Creates all the object files including main.o
 %.o: %.c $(DEPS)
 	$(CC) -c $^ $(CFLAGS) -fPIC 
+
+main.o: main.c $(DEPS)
+	$(CC) -c $^ $(CFLAGS) 
 
 # Make libraries:
 $(LIB_LOOP_S): $(OBJECTS_LOOP)
