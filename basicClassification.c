@@ -1,5 +1,4 @@
 #include "NumClass.h"
-#define POW 10
 
 // Declaring helper functions
 int getFactorial(int);
@@ -54,7 +53,7 @@ int getSqrt(int num){
 /* Returns the number, in power of pow*/
 int getPow(int num, int pow) {
     for(int i = 2; i <= pow; i++){
-        num *= POW;
+        num *= num;
     }
     return num;
 }
