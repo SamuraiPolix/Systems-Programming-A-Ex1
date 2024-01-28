@@ -19,4 +19,6 @@ For Example: 145 is a strong number
 */
 int isStrong(int);
 
+int getPow(int, int);
+
 #endif

@@ -1,5 +1,4 @@
 #include "NumClass.h"
-#include <math.h>
 
 // Declaring function helpers
 int isPalindromeRec(int, int);
@@ -30,7 +29,7 @@ int isPalindromeRec(int num,int sum){
 int isArmstrongRec(int num, int sum, int length){
     if(num == 0){return sum;}
 
-    sum += pow(num%10,length);
+    sum += getPow(num%10,length);
 
     return isArmstrongRec(num/10, sum , length);
 }

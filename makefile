@@ -25,13 +25,13 @@ loopd: $(LIB_LOOP_D)
 
 # Programs
 mains: $(MAIN_OBJECT) $(LIB_REC_S)
-	$(CC) -o $@ $< $(CFLAGS) ./$(LIB_REC_S) -lm -L.
+	$(CC) -o $@ $< $(CFLAGS) ./$(LIB_REC_S) -L.
 
 maindloop: $(MAIN_OBJECT) $(LIB_LOOP_D)
-	$(CC) -o $@ $< $(CFLAGS) ./$(LIB_LOOP_D) -lm -L.
+	$(CC) -o $@ $< $(CFLAGS) ./$(LIB_LOOP_D) -L.
 
 maindrec: $(MAIN_OBJECT) $(LIB_REC_D)
-	$(CC) -o $@ $< $(CFLAGS) ./$(LIB_REC_D) -lm -L.
+	$(CC) -o $@ $< $(CFLAGS) ./$(LIB_REC_D) -L.
 
 # Creates all the object files including main.o
 $(MAIN_OBJECT): main.c $(DEPS)

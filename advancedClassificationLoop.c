@@ -1,5 +1,4 @@
 #include "NumClass.h"
-#include <math.h>
 
 int isPalindrome(int num){
     int temp = num;
@@ -23,7 +22,7 @@ int isArmstrong(int num){
     }
     temp=num;
     while(temp > 0){
-        sum += pow(temp%10,len);
+        sum += getPow(temp%10,len);
         temp/=10;
     }
     return(sum==num) ? 1 : 0;
