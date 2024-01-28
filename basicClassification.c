@@ -1,4 +1,5 @@
 #include "NumClass.h"
+#define EPS 0.1        // Epsilon is 10^-1
 
 // Declaring helper functions
 int getFactorial(int);
@@ -43,8 +44,12 @@ https://en.wikipedia.org/wiki/Methods_of_computing_square_roots
 */
 int getSqrt(int num){
     double sqrt_i = 1;     // square root of 1
-    for (int i = 2; i <= num; i++){
-        sqrt_i = (sqrt_i+(i/sqrt_i))*0.5;
+    int temp = (sqrt_i * sqrt_i) - num;
+    while (temp > EPS){
+        sqrt_i = (sqrt_i+(num/sqrt_i))*0.5;
+        temp = (sqrt_i * sqrt_i) - num;
+        if (temp < 0)
+            temp = -temp;
     }
     return (int)sqrt_i;
 }
