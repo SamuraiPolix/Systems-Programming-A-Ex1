@@ -54,8 +54,9 @@ int getSqrt(int num){
 
 /* Returns the number, in power of pow*/
 int getPow(int num, int pow) {
-    for(int i = 2; i <= pow; i++){
-        num *= num;
+    int result = 1;
+    for(int i = 1; i <= pow; i++){
+        result *= num;
     }
     return num;
 }
