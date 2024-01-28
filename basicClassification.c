@@ -4,6 +4,7 @@
 // Declaring helper functions
 int getFactorial(int);
 int getSqrt(int);
+double getAbs(double);
 
 int isStrong(int num){
     int digit, sum = 0;
@@ -44,12 +45,8 @@ https://en.wikipedia.org/wiki/Methods_of_computing_square_roots
 */
 int getSqrt(int num){
     double sqrt_i = 1;     // square root of 1
-    int temp = (sqrt_i * sqrt_i) - num;
-    while (temp > EPS){
+    while (getAbs((sqrt_i*sqrt_i) - num) > EPS){
         sqrt_i = (sqrt_i+(num/sqrt_i))*0.5;
-        temp = (sqrt_i * sqrt_i) - num;
-        if (temp < 0)
-            temp = -temp;
     }
     return (int)sqrt_i;
 }
@@ -61,4 +58,8 @@ int getPow(int num, int pow) {
         num *= num;
     }
     return num;
+}
+
+double getAbs(double num){
+    return (num < 0) ? -num : num;
 }
