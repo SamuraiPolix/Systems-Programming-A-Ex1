@@ -58,7 +58,7 @@ int getPow(int num, int pow) {
     for(int i = 1; i <= pow; i++){
         result *= num;
     }
-    return num;
+    return result;
 }
 
 double getAbs(double num){
