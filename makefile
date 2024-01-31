@@ -19,7 +19,7 @@ LIB_REC_D = libclassrec.so
 all: mains maindloop maindrec loops recursives recursived loopd
 
 loops: $(LIB_LOOP_S)
-recursives: $(LIP_REC_S)
+recursives: $(LIB_REC_S)
 recursived: $(LIB_REC_D)
 loopd: $(LIB_LOOP_D)
 
